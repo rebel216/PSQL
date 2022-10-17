@@ -5,3 +5,4 @@ INSERT INTO animals (name,date_of_birth,escape_attempts,neutered,weight_kg ) VAL
 INSERT INTO animals (name,date_of_birth,escape_attempts,neutered,weight_kg ) VALUES ('Pikachu','2021-01-07',1,FALSE,15.04);
 INSERT INTO animals (name,date_of_birth,escape_attempts,neutered,weight_kg ) VALUES ('Devimon','2020-06-03',5,TRUE,11);
 
+
