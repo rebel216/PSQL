@@ -15,7 +15,7 @@ UPDATE animals SET species = '';
 
 START Transaction;
 UPDATE animals SET species = 'digimon' WHERE name LIKE '%mon';
-UPDATE animals SET species = 'pokemon' WHERE species LIKE '';
+UPDATE animals SET species = 'pokemon' WHERE species = "";
 COMMIT;
 
 START Transaction;
