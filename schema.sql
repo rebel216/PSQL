@@ -8,3 +8,6 @@ CREATE TABLE animals (
     neutered boolean,
     weight_kg float(2)
     );
+
+
+ALTER TABLE animals ADD species VARCHAR (50) ;
