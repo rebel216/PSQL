@@ -15,7 +15,7 @@ UPDATE animals SET species = '';
 
 START Transaction;
 UPDATE animals SET species = 'digimon' WHERE name LIKE '%mon';
-UPDATE animals SET species = 'pokemon' WHERE species = "";
+UPDATE animals SET species = 'pokemon' WHERE name NOT LIKE '%mon';
 COMMIT;
 
 START Transaction;
@@ -62,3 +62,19 @@ RAISE NOTICE 'mindigimon: %', mindigimon;
 END $$; 
 
 SELECT AVG(escape_attempts) AS escape_attempts FROM animals WHERE date_of_birth BETWEEN '1990-01-01' and '2000-01-01';
+
+/* Exercise Two */
+
+SELECT animals.name , owners.full_name FROM animals INNER JOIN owners ON animals.owner_id = owners.id WHERE owners.full_name ='Melody Pond';
+SELECT animals.name FROM animals INNER JOIN species ON animals.species_id = species.id WHERE species.name ='Pokemon';
+SELECT animals.name , owners.full_name FROM animals INNER JOIN owners ON animals.owner_id = owners.id;
+SELECT owner_id from (SELECT animals.name,species.name FROM animals INNER JOIN species ON animals.species_id = species.id group by species.name order by count(*)) ;
+SELECT animals.name , owners.full_name FROM species INNER JOIN (animals inner join owners on owners.full_name='Jennifer Orwell') ON animals.species_id = species.id WHERE species.name = 'Digimon';
+
+SELECT animals.name , owners.full_name ,animals.escape_attempts FROM animals INNER JOIN owners ON animals.owner_id = owners.id WHERE owners.full_name ='Dean Winchester' and animals.escape_attempts = 0;
+SELECT full_name from owners where id = (SELECT owner_id from animals group by owner_id order by count(*) desc limit 1);
+
+
+
+/* Excercise Three */
+
