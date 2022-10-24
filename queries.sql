@@ -110,3 +110,6 @@ SELECT species.name , COUNT(*) FROM visits JOIN vets ON vets.id = visits.vet_id 
 
 -- Analyze animals_id
 EXPLAIN ANALYZE SELECT COUNT(*) FROM visits where animals_id = 4;
+
+-- Analyze vets_id
+EXPLAIN ANALYZE SELECT * FROM visits where vets_id = 2;
