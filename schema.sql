@@ -47,7 +47,7 @@ CREATE TABLE visits (
     date_of_visit DATE
 );
 
--- Add an email column to your owners table
+/*added email table.*/
 ALTER TABLE
     owners
 ADD
