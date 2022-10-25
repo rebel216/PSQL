@@ -35,3 +35,29 @@ CREATE TABLE vets (
     date_of_graduation DATE
 );
 
+-- Create a "join table" called specializations
+CREATE TABLE specializations (
+    species_id INT REFERENCES species(id),
+    vet_id INT REFERENCES vets(id)
+);
+
+CREATE TABLE visits (
+    animals_id INT REFERENCES animals(id),
+    vet_id INT REFERENCES vets(id),
+    date_of_visit DATE
+);
+
+/*added email table.*/
+ALTER TABLE
+    owners
+ADD
+    COLUMN email VARCHAR(120);
+
+CREATE INDEX animals_id_asc ON visits(animals_id ASC);
+
+CREATE INDEX vet_id_asc ON visits(vet_id ASC);
+
+CREATE INDEX owners__email_asc ON owners(email ASC);
+
+/* ALter table owners */
+ALTER TABLE owners ADD COLUMN email VARCHAR(120);
