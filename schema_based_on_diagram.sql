@@ -14,6 +14,7 @@ CREATE TABLE treatments (
 	name VARCHAR(255)
 );
 
+
 CREATE TABLE medical_histories (
 	id INT NOT NULL GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
 	admitted_at TIMESTAMP,
